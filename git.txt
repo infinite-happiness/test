@@ -1,0 +1,2 @@
+git remote add test https://github.com/infinite-happiness/test.git
+git push -u test main
