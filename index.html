@@ -12,6 +12,7 @@
 		<!--<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" ></script>-->
 		<script src="https://unpkg.com/htmx.org@1.9.10"></script>
 		<style>
+			.links-black a{color:black;}
 			.orange-gradient{
 			background: rgb(255,165,0);
 			background: linear-gradient(90deg, rgba(255,165,0,1) 0%, rgba(240,230,140,1) 50%, rgba(255,215,0,1) 100%);
@@ -36,19 +37,7 @@
 							<h1>🙏 Ánanda Márga</h1>
 							<h2>A Complete Socio-Spiritual Path and Lifestyle</h2>
 							<h6>Átmamokśárthaḿ Jagaddhitáya Ca - Self-Realization and the Welfare of the Universe</h6>
-							
-							
-							<button hx-get="test.html" hx-swap="outerHTML">
-								Click Me
-							</button>
-							
-							<a href="#modal-introduction" hx-get="introduction.html" hx-target="#modal-body-introduction">
-								Introduction
-							</a>
-							
-							
-							
-							<div class="modal modal-large modal-animated--zoom-in" id="modal-introduction">
+							<div class="modal modal-large modal-animated--zoom-in" id="introduction">
 								<a href="#searchModalDialog" class="modal-overlay close-btn" aria-label="Close"></a>
 								<div class="modal-content" role="document">
 									<div class="modal-header">
@@ -72,21 +61,23 @@
 		</section>
 		
 		<section class="content">
-			<div class="grid grid-cols-3 u-gap-2">
+			<div class="grid grid-cols-3 u-gap-2 links-black">
+				<a href="#introduction" hx-get="introduction.html" hx-target="#modal-body-introduction">
+					<div>
+						<h2>Introduction</h2>
+						<img src="https://anandamarga.hemsida.eu/wp-content/uploads/2023/11/Rainbow-Divine-Mandala-Flower.jpg">
+						Ánanda Márga is the socio-spiritual path of bliss — infinite happiness.
+					</div>
+				</a>
 				<div>
-					<h2 style="background-image:;">Introduction</h2>
+					<h2>Introduction</h2>
 					<img src="https://anandamarga.hemsida.eu/wp-content/uploads/2023/11/Rainbow-Divine-Mandala-Flower.jpg">
-					Ánanda Márga is the socio-spiritual path of bliss — infinite happiness. The path consists of mainly two endeavors: Self-Realization and the Welfare of the Universe. In other words, it’s not only about expanding your mind through spiritual techniques, but also about contributing and doing as much as you can for the benefit and advancement of society and other beings.
+					Ánanda Márga is the spiritual path of bliss — infinite happiness.
 				</div>
 				<div>
 					<h2>Introduction</h2>
 					<img src="https://anandamarga.hemsida.eu/wp-content/uploads/2023/11/Rainbow-Divine-Mandala-Flower.jpg">
-					Ánanda Márga is the spiritual path of bliss — infinite happiness. The path consists of mainly two endeavors: Self-Realization and the Welfare of the Universe. In other words, it’s not only about expanding your mind through spiritual techniques, but also about contributing and doing as much as you can for the benefit and advancement of society and other beings.
-				</div>
-				<div>
-					<h2>Introduction</h2>
-					<img src="https://anandamarga.hemsida.eu/wp-content/uploads/2023/11/Rainbow-Divine-Mandala-Flower.jpg">
-					Ánanda Márga is the spiritual path of bliss — infinite happiness. The path consists of mainly two endeavors: Self-Realization and the Welfare of the Universe. In other words, it’s not only about expanding your mind through spiritual techniques, but also about contributing and doing as much as you can for the benefit and advancement of society and other beings.
+					Ánanda Márga is the spiritual path of bliss — infinite happiness.
 				</div>
 			</div>
 		</section>
