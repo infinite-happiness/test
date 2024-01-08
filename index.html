@@ -26,22 +26,6 @@
 			background: linear-gradient(90deg, rgba(255,165,0,1) 0%, rgba(240,230,140,1) 50%, rgba(255,215,0,1) 100%);
 			}
 		</style>
-		<script>
-			// Get the URL fragment identifier (anchor link ID)
-			const fragmentId = window.location.hash.substr(1);
-			
-			// Check if the fragment ID is defined
-			if (fragmentId) {
-				console.log(fragmentId);
-				// Find all anchor links with a similar ID
-				//const links = document.querySelectorAll('a[href*="#' + fragmentId + '-button"]');
-				// Click the first anchor link found
-				//links[0].click();
-				const link = document.getElementById(fragmentId + '-button');
-				link.click();
-				
-			}
-		</script>
 	</head>
 	<body>
 		
@@ -61,16 +45,16 @@
 							<h1>🙏 Ánanda Márga</h1>
 							<h2>A Complete Socio-Spiritual Path and Lifestyle</h2>
 							<h6>Átmamokśárthaḿ Jagaddhitáya Ca - Self-Realization and the Welfare of the Universe</h6>
-							<div class="modal modal-large modal-animated--zoom-in" id="introduction">
-								<a href="#searchModalDialog" class="modal-overlay close-btn" aria-label="Close"></a>
+							<div class="modal modal-large modal-animated--zoom-in" id="m">
+								<a href="#_" class="modal-overlay close-btn" aria-label="Close"></a>
 								<div class="modal-content" role="document">
 									<div class="modal-header">
 							            <a href="#_"><span class="icon btn-close u-pull-right">
 											<i class="fa-wrapper fa fa-times"></i>
 										</span></a>
-										</div>
-										<div id="modal-body">
-											<div class="fa-3x">
+									</div>
+									<div id="modal-body">
+										<div class="fa-3x">
 											<i class="fas fa-spinner fa-pulse"></i>
 										</div>
 									</div>
@@ -86,16 +70,15 @@
 		
 		<section class="content">
 			<div class="grid grid-cols-3 u-gap-2 links-black">
-				<!-- todo: hx-trigger load works for loading modal on page load, but it would require modal code for each a (button), maybe solve with old js library that creates custom html tags -->
-				<a id="introduction-button" href="#introduction" hx-get="introduction.html" hx-target="#modal-body" xhx-trigger="load">
+				<a id="introduction-button" href="#m?m=introduction" hx-get="introduction.html" hx-target="#modal-body" xhx-trigger="load">
 					<div>
-						<h2>Introduction</h2>
+						<h2>How to Find Happiness</h2>
 						<img src="https://anandamarga.hemsida.eu/wp-content/uploads/2023/11/Rainbow-Divine-Mandala-Flower.jpg">
 						Ánanda Márga is the socio-spiritual path of bliss — infinite happiness, targeting the main problems of modern humanity.
 					</div>
 				</a>
 				
-				<a id="philosophy-button" href="#philosophy" hx-get="philosophy.html" hx-target="#modal-body">
+				<a id="philosophy-button" href="#m?m=philosophy" hx-get="philosophy.html" hx-target="#modal-body">
 					<div>
 						<h2>Philosophy</h2>
 						<img src="https://anandamarga.hemsida.eu/wp-content/uploads/2023/11/Rainbow-Divine-Mandala-Flower.jpg">
@@ -105,5 +88,23 @@
 			</div>
 		</section>
 		
+		<script>
+			// Get the URL query string
+			const queryString = window.location.search.substring(1);
+			
+			// Parse the query string using URLSearchParams
+			const params = new URLSearchParams(queryString);
+			
+			// Get the value of the query string variable m
+			const mValue = params.get('m');
+			
+			// Check if the value is defined
+			if (mValue) {
+				// Find and click the link with the given ID
+				const buttonLink = document.getElementById(mValue + '-button');
+				if (buttonLink) {
+					buttonLink.click();
+				}
+			}		</script>
 	</body>
 </html>																								
