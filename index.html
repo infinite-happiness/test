@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html id="page">
+<!--
+	https://htmx.org/docs/#introduction
+	https://www.cirrus-ui.com/elements/modal
+	https://fontawesome.com/v5/docs/web/style/animate
+-->
 	<head>
 		<title>Getting Started with Cirrus</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
@@ -62,11 +67,11 @@
 		
 		<section class="content">
 			<div class="grid grid-cols-3 u-gap-2 links-black">
-				<a href="#introduction" hx-get="introduction.html" hx-target="#modal-body-introduction">
+				<a href="#introduction" hx-get="introduction.html" hx-target="#modal-body-introduction" hx-trigger="load">
 					<div>
 						<h2>Introduction</h2>
 						<img src="https://anandamarga.hemsida.eu/wp-content/uploads/2023/11/Rainbow-Divine-Mandala-Flower.jpg">
-						Ánanda Márga is the socio-spiritual path of bliss — infinite happiness, attempting to solve the main problems of modern humanity.
+						Ánanda Márga is the socio-spiritual path of bliss — infinite happiness, targeting the main problems of modern humanity.
 					</div>
 				</a>
 				
@@ -74,7 +79,7 @@
 					<div>
 						<h2>Philosophy</h2>
 						<img src="https://anandamarga.hemsida.eu/wp-content/uploads/2023/11/Rainbow-Divine-Mandala-Flower.jpg">
-						Ánanda Márga has a vast philosophy, covering everything from spirituality, creation, evolution, economy, feminism, futurism and justice.
+						Ánanda Márga has a vast philosophy, covering everything from spirituality, creation, evolution, economy, feminism, futurism, humanism, universalism and justice.
 					</div>
 				</a>
 			</div>
