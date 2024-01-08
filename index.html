@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html id="page">
-<!--
-	https://htmx.org/docs/#introduction
-	https://www.cirrus-ui.com/elements/modal
-	https://fontawesome.com/v5/docs/web/style/animate
--->
+	<!--
+		https://infinite-happiness.github.io/test/
+		https://github.com/infinite-happiness/test
+		
+		https://htmx.org/docs/#introduction
+		https://www.cirrus-ui.com/elements/modal
+		https://fontawesome.com/v5/docs/web/style/animate
+	-->
 	<head>
 		<title>Getting Started with Cirrus</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
@@ -23,6 +26,20 @@
 			background: linear-gradient(90deg, rgba(255,165,0,1) 0%, rgba(240,230,140,1) 50%, rgba(255,215,0,1) 100%);
 			}
 		</style>
+		<script>
+			// Get the URL fragment identifier (anchor link ID)
+			const fragmentId = window.location.hash.substr(1);
+			
+			// Check if the fragment ID is defined
+			if (fragmentId) {
+				console.log(fragmentId);
+				// Find all anchor links with a similar ID
+				const links = document.querySelectorAll('a[href*="#' + fragmentId + '-button"]');
+				
+				// Click the first anchor link found
+				links[0].click();
+			}
+		</script>
 	</head>
 	<body>
 		
@@ -49,9 +66,9 @@
 							            <a href="#_"><span class="icon btn-close u-pull-right">
 											<i class="fa-wrapper fa fa-times"></i>
 										</span></a>
-									</div>
-									<div class="modal-body" id="modal-body-introduction">
-										<div class="fa-3x">
+										</div>
+										<div id="modal-body">
+											<div class="fa-3x">
 											<i class="fas fa-spinner fa-pulse"></i>
 										</div>
 									</div>
@@ -67,7 +84,8 @@
 		
 		<section class="content">
 			<div class="grid grid-cols-3 u-gap-2 links-black">
-				<a href="#introduction" hx-get="introduction.html" hx-target="#modal-body-introduction" hx-trigger="load">
+				<!-- todo: hx-trigger load works for loading modal on page load, but it would require modal code for each a (button), maybe solve with old js library that creates custom html tags -->
+				<a id="introduction-button" href="#introduction" hx-get="introduction.html" hx-target="#modal-body" xhx-trigger="load">
 					<div>
 						<h2>Introduction</h2>
 						<img src="https://anandamarga.hemsida.eu/wp-content/uploads/2023/11/Rainbow-Divine-Mandala-Flower.jpg">
@@ -75,7 +93,7 @@
 					</div>
 				</a>
 				
-				<a href="#philosophy" hx-get="philosophy.html" hx-target="#modal-body-philosophy">
+				<a id="philosophy-button" href="#philosophy" hx-get="philosophy.html" hx-target="#modal-body">
 					<div>
 						<h2>Philosophy</h2>
 						<img src="https://anandamarga.hemsida.eu/wp-content/uploads/2023/11/Rainbow-Divine-Mandala-Flower.jpg">
