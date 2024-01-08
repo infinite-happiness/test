@@ -34,10 +34,12 @@
 			if (fragmentId) {
 				console.log(fragmentId);
 				// Find all anchor links with a similar ID
-				const links = document.querySelectorAll('a[href*="#' + fragmentId + '-button"]');
-				
+				//const links = document.querySelectorAll('a[href*="#' + fragmentId + '-button"]');
 				// Click the first anchor link found
-				links[0].click();
+				//links[0].click();
+				const link = document.getElementById(fragmentId + '-button');
+				link.click();
+				
 			}
 		</script>
 	</head>
